@@ -190,7 +190,7 @@ The Vision Transformer model was evaluated on 4,665 test images and achieves:
 ### Research & Planning
 - **Environmental impact studies** 
 - **Urban planning** and reconstruction
-- **Climate change research** and monitoring
+- **Climate change research** and monitoring.
 
 ### Government & NGOs
 - **Disaster monitoring** and early warning
