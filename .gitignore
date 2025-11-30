@@ -259,3 +259,10 @@ experiments/
 logs/
 predictions/
 submissions/
+
+# Evaluation files and results
+evaluation_results/
+*.png
+*.jpg
+*.jpeg
+evaluate_model.py

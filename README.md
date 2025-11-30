@@ -144,11 +144,36 @@ print(f"Confidence: {result['prediction']['confidence']}%")
 
 ## 📊 Model Performance
 
-The Vision Transformer model was trained on aerial disaster datasets and achieves:
+The Vision Transformer model was evaluated on 4,665 test images and achieves:
 
-- **Accuracy**: High classification accuracy on test data
-- **Speed**: Real-time inference on modern hardware
-- **Robustness**: Works across various image conditions and disasters
+### Overall Metrics
+- **Accuracy**: 73.42% (0.7342)
+- **Precision**: 74.74% (0.7474) 
+- **Recall**: 73.42% (0.7342)
+- **F1-Score**: 71.45% (0.7145)
+- **AUC-ROC**: 76.91% (0.7691)
+
+### Per-Class Performance
+**Pre-Disaster Classification:**
+- Precision: 79.36% (high confidence when predicting pre-disaster)
+- Recall: 45.34% (identifies ~45% of actual pre-disaster images)
+- F1-Score: 57.71%
+
+**Post-Disaster Classification:**
+- Precision: 71.66% (good reliability for post-disaster predictions)
+- Recall: 92.14% (identifies 92% of actual post-disaster images)
+- F1-Score: 80.62%
+
+### Inference Performance
+- **Speed**: 11.26ms average inference time
+- **Throughput**: ~89 images per second
+- **Real-time capable**: Suitable for live applications
+
+### Key Insights
+- Model shows strong performance in detecting post-disaster conditions (92.14% recall)
+- Conservative in pre-disaster classification (higher precision, lower recall)
+- Fast inference makes it suitable for real-time disaster monitoring applications
+- Performance suitable for emergency response scenarios requiring rapid assessment
 
 ## 🎯 Use Cases
 
