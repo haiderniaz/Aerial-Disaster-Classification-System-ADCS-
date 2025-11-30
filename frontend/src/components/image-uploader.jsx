@@ -1,8 +1,6 @@
-import React from "react"
-
 import { useState } from "react"
-import { Upload, X } from "lucide-react"
-import { Card } from "@/components/ui/card"
+import { Upload, X, ImageIcon } from "lucide-react"
+import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 
 export default function ImageUploader({ onImageSelect, imagePreview, onRemove }) {
@@ -36,20 +34,26 @@ export default function ImageUploader({ onImageSelect, imagePreview, onRemove })
 
   if (imagePreview) {
     return (
-      <Card className="p-6 border-2 border-border/50 bg-card hover:border-border/80 transition-colors">
-        <div className="space-y-4">
-          <div className="relative w-full h-64 sm:h-80 bg-muted rounded-lg overflow-hidden">
-            <img src={imagePreview || "/placeholder.svg"} alt="Preview" className="w-full h-full object-cover" />
+      <Card>
+        <CardContent className="p-6">
+          <div className="space-y-4">
+            <div className="relative aspect-video w-full overflow-hidden rounded-lg border bg-muted">
+              <img 
+                src={imagePreview || "/placeholder.svg"} 
+                alt="Preview" 
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <Button
+              onClick={onRemove}
+              variant="outline"
+              className="w-full text-destructive hover:text-destructive"
+            >
+              <X className="mr-2 h-4 w-4" />
+              Remove Image
+            </Button>
           </div>
-          <Button
-            onClick={onRemove}
-            variant="outline"
-            className="w-full border-red-200 hover:bg-red-50 dark:hover:bg-red-950 text-red-600 dark:text-red-400 bg-transparent"
-          >
-            <X className="mr-2 h-4 w-4" />
-            Remove Image
-          </Button>
-        </div>
+        </CardContent>
       </Card>
     )
   }
@@ -60,29 +64,39 @@ export default function ImageUploader({ onImageSelect, imagePreview, onRemove })
       onDragLeave={handleDrag}
       onDragOver={handleDrag}
       onDrop={handleDrop}
-      className={`p-8 sm:p-12 border-2 border-dashed rounded-lg cursor-pointer transition-all duration-200 ${
+      className={`border-2 border-dashed transition-colors ${
         dragActive
-          ? "border-purple-600 bg-purple-50/50 dark:bg-purple-950/20"
-          : "border-border hover:border-purple-400 bg-card/50 hover:bg-card"
+          ? "border-primary bg-accent"
+          : "border-muted-foreground/25 hover:border-primary/50"
       }`}
     >
-      <input
-        type="file"
-        id="file-input"
-        onChange={handleChange}
-        accept="image/jpeg,image/png,image/tiff,image/bmp"
-        className="hidden"
-        aria-label="Upload image"
-      />
+      <CardContent className="p-10">
+        <input
+          type="file"
+          id="file-input"
+          onChange={handleChange}
+          accept="image/jpeg,image/png,image/tiff,image/bmp"
+          className="hidden"
+          aria-label="Upload image"
+        />
 
-      <label htmlFor="file-input" className="flex flex-col items-center justify-center cursor-pointer">
-        <div className="mb-4 p-3 bg-gradient-to-br from-purple-100 to-blue-100 dark:from-purple-900/30 dark:to-blue-900/30 rounded-full">
-          <Upload className="h-8 w-8 text-purple-600 dark:text-purple-400" />
-        </div>
-        <h3 className="text-lg font-semibold text-foreground mb-1">Drag and drop your image</h3>
-        <p className="text-sm text-muted-foreground mb-4">or click to browse</p>
-        <p className="text-xs text-muted-foreground">JPG, JPEG, PNG, TIFF, BMP (Max 50MB)</p>
-      </label>
+        <label 
+          htmlFor="file-input" 
+          className="flex cursor-pointer flex-col items-center justify-center gap-4"
+        >
+          <div className="flex h-20 w-20 items-center justify-center rounded-full border bg-muted">
+            <Upload className="h-10 w-10 text-muted-foreground" />
+          </div>
+          <div className="space-y-2 text-center">
+            <p className="text-sm font-medium">
+              <span className="text-primary">Click to upload</span> or drag and drop
+            </p>
+            <p className="text-xs text-muted-foreground">
+              JPG, PNG, TIFF or BMP (MAX. 50MB)
+            </p>
+          </div>
+        </label>
+      </CardContent>
     </Card>
   )
 }
