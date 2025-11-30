@@ -41,7 +41,9 @@ export default function Home() {
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
             <Button size="lg" variant="outline">
-              Learn More
+              <a href="https://github.com/haiderniaz/Aerial-Disaster-Classification-System-ADCS-" target="_blank" rel="noopener noreferrer">
+                Learn More
+              </a>
             </Button>
           </div>
         </section>
