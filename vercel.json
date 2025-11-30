@@ -8,8 +8,6 @@
 
   "framework": "vite",
 
-  "cleanUrls": true,
-
   "routes": [
     {
       "src": "/(.*)",
