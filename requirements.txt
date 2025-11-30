@@ -1,17 +1,17 @@
 # Disaster Detection Project Requirements
 # Core ML libraries
-torch==2.1.0
-torchvision==0.16.0
-timm==0.9.12
-numpy==1.24.3
-Pillow==10.1.0
+torch
+torchvision
+timm
+numpy
+Pillow
 scikit-learn
 matplotlib
 tqdm
 
 # Web API
-flask==3.0.0
-flask-cors==4.0.0
+flask
+flask-cors
 
 # Utilities
 pathlib

@@ -32,7 +32,6 @@ venv.bak/
 .conda/
 
 # PyTorch/ML models and checkpoints
-*.pth
 *.pt
 *.pkl
 *.h5
@@ -253,9 +252,15 @@ multirun/
 .hydra/
 
 # Custom project specific
-output*/
 results/
 experiments/
 logs/
 predictions/
 submissions/
+
+# Evaluation files and results
+evaluation_results/
+*.png
+*.jpg
+*.jpeg
+evaluate_model.py
