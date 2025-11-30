@@ -109,7 +109,7 @@ export default function ResultsDisplay({ prediction, imagePreview }) {
           <CardContent className="space-y-4">
             <div className="flex items-center justify-between text-sm">
               <span className="text-muted-foreground">Model Accuracy</span>
-              <span className="font-medium">73.4%</span>
+              <span className="font-medium">75.83%</span>
             </div>
             <div className="flex items-center justify-between text-sm">
               <span className="text-muted-foreground">Processing Time</span>
