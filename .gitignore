@@ -22,7 +22,6 @@ share/python-wheels/
 MANIFEST
 
 # Virtual environments
-.env
 .venv
 env/
 venv/
@@ -78,7 +77,6 @@ tier3/
 .idea/
 
 # VS Code
-.vscode/
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
@@ -102,7 +100,6 @@ yarn.lock
 out/
 
 # Environment variables
-.env.local
 .env.development.local
 .env.test.local
 .env.production.local
@@ -202,7 +199,6 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.env
 .venv
 env/
 venv/
@@ -264,3 +260,7 @@ evaluation_results/
 *.jpg
 *.jpeg
 evaluate_model.py
+temp_auto_push.bat
+temp_interactive_push.bat
+branch_structure.json
+config.bat
