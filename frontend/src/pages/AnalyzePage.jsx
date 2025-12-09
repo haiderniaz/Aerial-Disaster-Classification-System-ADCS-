@@ -51,7 +51,7 @@ export default function AnalyzePage() {
       const formData = new FormData()
       formData.append("image", selectedFile)
 
-      const response = await fetch("https://unlogistical-uncorresponding-kellen.ngrok-free.dev/api/predict", {
+      const response = await fetch(" https://unlogistical-uncorresponding-kellen.ngrok-free.dev/api/predict", {
         method: "POST",
         body: formData,
       })
